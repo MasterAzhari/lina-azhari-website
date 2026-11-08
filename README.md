@@ -23,7 +23,7 @@ When `metaPixelId` is set, the site tracks `PageView`, `Contact` (WhatsApp click
 - [ ] Meta Pixel ID in `assets/config.js`
 - [ ] Confirm product copy for MasterAds, MasterBlaster and Pibot in `index.html` and `technology.html`
 - [ ] Product links currently point to planned `*.lam.my` subdomains; update once DNS is live
-- [ ] Real photo for the About section (currently a "2018" block) and a real logo (currently text "LAM")
+- [ ] Real team photo, if wanted (About section now shows the LAM logo)
 - [ ] Testimonials, if you'd like a proof section
 - [ ] SSM registration number in the footer (in `index.html` etc., marked TODO)
 - [ ] Check Medisavers' agent guidelines on using their name, and whether you can use their logo
