@@ -1,18 +1,15 @@
 # Lina Azhari Marketing (LAM) website
 
-Marketing site for Lina Azhari Marketing, founded 2018. It covers LAM's two businesses:
-
-1. **Health insurance marketing** as a marketing agent for [Medisavers](https://www.medisavers.my/)
-2. **Technology development**: mobile apps, websites and web apps for clients, plus LAM's own products Pibot, MasterBot, MasterAds and MasterBlaster
+Marketing site for Lina Azhari Marketing, a Malaysian IT company founded in 2018 that runs digital marketing for clients. Its speciality is an Ads Rotation System for marketing teams, and it builds its own products: MasterBot, MasterAds, MasterBlast and Pibot (intelligent chatbot).
 
 Plain static site (HTML, CSS, JS), no build step, English, mobile-first.
 
 ## Pages
 | File | Content |
 |---|---|
-| `index.html` | Home: hero, the two businesses, product cards, about LAM, call to action |
-| `insurance.html` | Health insurance with Medisavers: how we help, who it's for, agent disclaimer |
-| `technology.html` | Client services (apps, websites, web apps) and product details |
+| `index.html` | Home: hero, what we do (digital marketing + Ads Rotation System), products, about LAM, call to action |
+| `services.html` | Digital marketing services, Ads Rotation System, apps and websites |
+| `products.html` | MasterBot, MasterAds, MasterBlast and Pibot |
 | `contact.html` | Enquiry form that opens a pre-filled WhatsApp message, WhatsApp, email, office address with Google Maps link |
 
 ## Settings
@@ -21,15 +18,14 @@ When `metaPixelId` is set, the site tracks `PageView`, `Contact` (WhatsApp click
 
 ## Still to do before launch
 - [ ] Meta Pixel ID in `assets/config.js`
-- [ ] Confirm product copy for MasterAds, MasterBlaster and Pibot in `index.html` and `technology.html`
+- [ ] Confirm how the Ads Rotation System works (steps in `services.html`) and the MasterAds/MasterBlast copy in `products.html`
 - [ ] Product links currently point to planned `*.lam.my` subdomains; update once DNS is live
 - [ ] Real team photo, if wanted (About section now shows the LAM logo)
 - [ ] Testimonials, if you'd like a proof section
 - [ ] SSM registration number in the footer (in `index.html` etc., marked TODO)
-- [ ] Check Medisavers' agent guidelines on using their name, and whether you can use their logo
 
 ## Photos
-The three hero photos in `assets/img/` (home, insurance, technology) are AI-generated with Google Flow (Nano Banana) for LAM. Each has a full-size and an `-800` version for phones.
+The hero photos in `assets/img/` (home, technology) are AI-generated with Google Flow (Nano Banana) for LAM. Each has a full-size and an `-800` version for phones.
 
 ## Run locally
 ```sh
