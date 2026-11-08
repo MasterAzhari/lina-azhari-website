@@ -1,19 +1,19 @@
 /*
- * Tetapan laman LAM. Tukar nilai di sini sahaja.
- * GANTIKAN nilai bertanda TODO sebelum laman dilancarkan.
+ * LAM site settings. Change values here only.
  */
 window.LAM_CONFIG = {
-  // Nombor WhatsApp dalam format antarabangsa, tanpa + atau sengkang. TODO: nombor sebenar
-  whatsappNumber: "60123456789",
-  whatsappMessage: "Salam, saya berminat dengan produk Lina Azhari Marketing. Boleh terangkan lebih lanjut?",
-  email: "hello@lam.my",
-  // ID Meta Pixel. Biarkan kosong untuk matikan. TODO: isi selepas Pixel dicipta
+  // WhatsApp number in international format, no + or dashes
+  whatsappNumber: "60196452671",
+  whatsappMessage: "Hi LAM, I'd like to know more about your services.",
+  email: "qminda@gmail.com",
+  address: "14B & 16B, Jalan SS 21/39, Damansara Utama, 47400 Petaling Jaya, Selangor",
+  // Meta Pixel ID. Leave empty to disable. TODO: fill in once the Pixel is created
   metaPixelId: "",
-  // Pautan produk. Tukar ke subdomain lam.my bila DNS siap.
+  // Product links. Point these at the lam.my subdomains once DNS is live.
   links: {
     masterbot: "https://masterbot.lam.my",
     masterads: "https://ads.lam.my",
     blaster: "https://blaster.lam.my",
-    chat: "https://chat.lam.my"
+    medisavers: "https://www.medisavers.my/"
   }
 };

@@ -1,40 +1,43 @@
-# Laman web Lina Azhari Marketing (LAM)
+# Lina Azhari Marketing (LAM) website
 
-Laman pemasaran induk untuk LAM, memaut ke MasterBot, MasterAds, Master Blaster dan Bot Chat.
-Laman statik biasa (HTML, CSS, JS) tanpa langkah build. Bahasa Melayu, direka untuk telefon dahulu.
+Marketing site for Lina Azhari Marketing, founded 2018. It covers LAM's two businesses:
 
-## Halaman
-| Fail | Kandungan |
+1. **Health insurance marketing** as a marketing agent for [Medisavers](https://www.medisavers.my/)
+2. **Technology development**: mobile apps, websites and web apps for clients, plus LAM's own products Pibot, MasterBot, MasterAds and MasterBlaster
+
+Plain static site (HTML, CSS, JS), no build step, English, mobile-first.
+
+## Pages
+| File | Content |
 |---|---|
-| `index.html` | Utama: hero, kad produk, cara ia berfungsi, bukti & testimoni, tentang Master Azhari, CTA |
-| `produk.html` | Butiran setiap produk dengan butang WhatsApp khusus produk |
-| `hubungi.html` | Borang lead yang membuka mesej siap diisi di WhatsApp (terus ke MasterBot), email, waktu operasi |
+| `index.html` | Home: hero, the two businesses, product cards, about LAM, call to action |
+| `insurance.html` | Health insurance with Medisavers: how we help, who it's for, agent disclaimer |
+| `technology.html` | Client services (apps, websites, web apps) and product details |
+| `contact.html` | Enquiry form that opens a pre-filled WhatsApp message, WhatsApp, email, office address with Google Maps link |
 
-## Tetapan
-Semua tetapan ada dalam `assets/config.js`:
-- `whatsappNumber`: nombor WhatsApp (format `60123456789`). **Masih nombor contoh.**
-- `metaPixelId`: ID Meta Pixel. Kosong bermaksud Pixel tidak dimuatkan. Bila diisi, laman menjejak `PageView`, `Contact` (klik WhatsApp) dan `Lead` (borang).
-- `email` dan `links` (subdomain setiap produk).
+## Settings
+Everything lives in `assets/config.js`: WhatsApp number, default message, email, office address, Meta Pixel ID and product links.
+When `metaPixelId` is set, the site tracks `PageView`, `Contact` (WhatsApp clicks) and `Lead` (form submits).
 
-## Perlu diisi sebelum dilancarkan
-- [ ] Nombor WhatsApp sebenar dalam `assets/config.js`
-- [ ] Testimoni dan angka sebenar dalam `index.html` (bahagian "Bukti & hasil"), kemudian buang nota draf
-- [ ] Gambar Master Azhari (gantikan kotak "MA" dalam `index.html`)
-- [ ] Sahkan ayat MasterAds dan Master Blaster dalam `index.html` dan `produk.html`
-- [ ] No. pendaftaran SSM di footer (jika ada)
-- [ ] ID Meta Pixel
-- [ ] Logo sebenar (sekarang logo teks "LAM") dan `assets/og-image.png` jika mahu reka bentuk lain
+## Still to do before launch
+- [ ] Meta Pixel ID in `assets/config.js`
+- [ ] Confirm product copy for MasterAds, MasterBlaster and Pibot in `index.html` and `technology.html`
+- [ ] Product links currently point to planned `*.lam.my` subdomains; update once DNS is live
+- [ ] Real photo for the About section (currently a "2018" block) and a real logo (currently text "LAM")
+- [ ] Testimonials, if you'd like a proof section
+- [ ] SSM registration number in the footer (in `index.html` etc., marked TODO)
+- [ ] Check Medisavers' agent guidelines on using their name, and whether you can use their logo
 
-## Uji di komputer
+## Run locally
 ```sh
 python3 -m http.server 8000
-# buka http://localhost:8000
+# open http://localhost:8000
 ```
 
 ## Deploy
-Mana-mana hosting statik boleh guna (GitHub Pages, Netlify, Cloudflare Pages). Untuk container di pibot.io:
+Works on any static host (GitHub Pages, Netlify, Cloudflare Pages). For a container on pibot.io:
 ```sh
 docker build -t lam-website .
 docker run -p 8080:80 lam-website
 ```
-Letak domain `lam.my` terus pada container (DNS A/CNAME, bukan redirect) dan keluarkan SSL melalui Caddy/Nginx, supaya pelawat tidak nampak `pibot.io`. Pautan canonical dan `og:url` sudah ditetapkan kepada `https://lam.my/`.
+Point `lam.my` straight at the container (DNS A/CNAME, not a redirect) and issue SSL through Caddy/Nginx so visitors never see `pibot.io`. Canonical and `og:url` tags already use `https://lam.my/`.

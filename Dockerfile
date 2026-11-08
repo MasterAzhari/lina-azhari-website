@@ -1,5 +1,5 @@
-# Laman statik LAM dihidangkan oleh nginx. SSL diurus oleh Caddy/Nginx di hadapan container.
+# Static LAM site served by nginx. SSL is handled by Caddy/Nginx in front of the container.
 FROM nginx:1.27-alpine
-COPY index.html produk.html hubungi.html /usr/share/nginx/html/
+COPY index.html insurance.html technology.html contact.html /usr/share/nginx/html/
 COPY assets /usr/share/nginx/html/assets
 EXPOSE 80
