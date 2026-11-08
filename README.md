@@ -1,6 +1,6 @@
 # Lina Azhari Marketing (LAM) website
 
-Marketing site for Lina Azhari Marketing, a Malaysian IT company founded in 2018 that runs digital marketing for clients. Its speciality is an Ads Rotation System for marketing teams, and it builds its own products: MasterBot, MasterAds, MasterBlast and Pibot (intelligent chatbot).
+Marketing site for Lina Azhari Marketing, a Malaysian IT company founded in 2018 that runs digital marketing for clients. Its speciality is an Ads Rotation System for marketing teams, and it builds its own products: MasterBot, MasterAds, MasterBlaster and Pibot (intelligent chatbot).
 
 Plain static site (HTML, CSS, JS), no build step, English, mobile-first.
 
@@ -9,7 +9,7 @@ Plain static site (HTML, CSS, JS), no build step, English, mobile-first.
 |---|---|
 | `index.html` | Home: hero, what we do (digital marketing + Ads Rotation System), products, about LAM, call to action |
 | `services.html` | Digital marketing services, Ads Rotation System, apps and websites |
-| `products.html` | MasterBot, MasterAds, MasterBlast and Pibot |
+| `products.html` | MasterBot, MasterAds, MasterBlaster and Pibot |
 | `masterbot.html` | MasterBot AI WhatsApp bot: features, real panel screenshots, FAQ, free demo |
 | `pibot.html` | Pibot chatbot builder: builder and live chat screenshots, free demo |
 | `contact.html` | Enquiry form that opens a pre-filled WhatsApp message, WhatsApp, email, office address with Google Maps link |
@@ -20,7 +20,7 @@ When `metaPixelId` is set, the site tracks `PageView`, `Contact` (WhatsApp click
 
 ## Still to do before launch
 - [ ] Meta Pixel ID in `assets/config.js`
-- [ ] Confirm how the Ads Rotation System works (steps in `services.html`) and the MasterAds/MasterBlast copy in `products.html`
+- [ ] Confirm how the Ads Rotation System works (steps in `services.html`) and the MasterAds/MasterBlaster copy in `products.html`
 - [ ] Product links currently point to planned `*.lam.my` subdomains; update once DNS is live
 - [ ] Real team photo, if wanted (About section now shows the LAM logo)
 - [ ] Testimonials, if you'd like a proof section
