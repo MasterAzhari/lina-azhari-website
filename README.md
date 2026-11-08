@@ -10,6 +10,8 @@ Plain static site (HTML, CSS, JS), no build step, English, mobile-first.
 | `index.html` | Home: hero, what we do (digital marketing + Ads Rotation System), products, about LAM, call to action |
 | `services.html` | Digital marketing services, Ads Rotation System, apps and websites |
 | `products.html` | MasterBot, MasterAds, MasterBlast and Pibot |
+| `masterbot.html` | MasterBot AI WhatsApp bot: features, real panel screenshots, FAQ, free demo |
+| `pibot.html` | Pibot chatbot builder: builder and live chat screenshots, free demo |
 | `contact.html` | Enquiry form that opens a pre-filled WhatsApp message, WhatsApp, email, office address with Google Maps link |
 
 ## Settings

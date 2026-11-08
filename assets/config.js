@@ -13,6 +13,8 @@ window.LAM_CONFIG = {
   links: {
     masterbot: "https://masterbot.lam.my",
     masterads: "https://ads.lam.my",
-    masterblast: "https://blaster.lam.my"
+    masterblast: "https://blaster.lam.my",
+    // Live Pibot demo bot. Switch to https://chat.lam.my once that domain is set up.
+    pibotDemo: "https://viewer.pibot.io/main"
   }
 };
