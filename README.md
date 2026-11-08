@@ -26,6 +26,12 @@ When `metaPixelId` is set, the site tracks `PageView`, `Contact` (WhatsApp click
 - [ ] Testimonials, if you'd like a proof section
 - [ ] SSM registration number in the footer (in `index.html` etc., marked TODO)
 
+## SEO
+- Each page has its own title, meta description, canonical URL, Open Graph and Twitter tags.
+- JSON-LD structured data: Organization/ProfessionalService with address and phone (Home, Contact), SoftwareApplication (MasterBot, Pibot), FAQPage (MasterBot), BreadcrumbList (all pages).
+- `sitemap.xml` and `robots.txt` at the site root; submit the sitemap in Google Search Console.
+- nginx: gzip, 7-day cache for `/assets/`, `/index.html` redirects to `/`.
+
 ## Photos
 The hero photos in `assets/img/` (home, technology) are AI-generated with Google Flow (Nano Banana) for LAM. Each has a full-size and an `-800` version for phones.
 
@@ -41,4 +47,4 @@ Works on any static host (GitHub Pages, Netlify, Cloudflare Pages). For a contai
 docker build -t lam-website .
 docker run -p 8080:80 lam-website
 ```
-Point `lam.my` straight at the container (DNS A/CNAME, not a redirect) and issue SSL through Caddy/Nginx so visitors never see `pibot.io`. Canonical and `og:url` tags already use `https://lam.my/`.
+Point `lam.my` straight at the container (DNS A/CNAME, not a redirect) and issue SSL through Caddy/Nginx so visitors never see `pibot.io`. Canonical, `og:url`, structured data, `sitemap.xml` and `robots.txt` currently use `https://lam.pibot.io` so Google can index the live site. When `lam.my` is live: change every `https://lam.pibot.io` in the HTML, `sitemap.xml` and `robots.txt` to `https://lam.my`, and 301-redirect lam.pibot.io to lam.my.

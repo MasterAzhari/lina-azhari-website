@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lam.pibot.io/sitemap.xml
