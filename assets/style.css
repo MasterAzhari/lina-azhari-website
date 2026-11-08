@@ -190,3 +190,11 @@ p { margin: 0 0 1em; }
   background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(31,168,85,.4);
 }
 .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+/* Hero photos */
+.hero-grid { display: grid; gap: 28px; align-items: center; }
+.hero-img { width: 100%; height: auto; aspect-ratio: 1376 / 768; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 40px; }
+  .hero-img { aspect-ratio: 4 / 3.4; }
+}
