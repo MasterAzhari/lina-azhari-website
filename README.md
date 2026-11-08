@@ -28,6 +28,9 @@ When `metaPixelId` is set, the site tracks `PageView`, `Contact` (WhatsApp click
 - [ ] SSM registration number in the footer (in `index.html` etc., marked TODO)
 - [ ] Check Medisavers' agent guidelines on using their name, and whether you can use their logo
 
+## Photos
+The three hero photos in `assets/img/` (home, insurance, technology) are AI-generated with Google Flow (Nano Banana) for LAM. Each has a full-size and an `-800` version for phones.
+
 ## Run locally
 ```sh
 python3 -m http.server 8000
