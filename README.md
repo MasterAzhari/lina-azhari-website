@@ -30,7 +30,8 @@ When `metaPixelId` is set, the site tracks `PageView`, `Contact` (WhatsApp click
 - Each page has its own title, meta description, canonical URL, Open Graph and Twitter tags.
 - JSON-LD structured data: Organization/ProfessionalService with address and phone (Home, Contact), SoftwareApplication (MasterBot, Pibot), FAQPage (MasterBot), BreadcrumbList (all pages).
 - `sitemap.xml` and `robots.txt` at the site root; submit the sitemap in Google Search Console.
-- nginx: gzip, 7-day cache for `/assets/`, `/index.html` redirects to `/`.
+- nginx: gzip, 7-day cache for `/assets/`, `no-cache` for pages, `/index.html` redirects to `/`.
+- CSS/JS links carry `?v=<hash>` of the file content; regenerate the pages after changing `style.css`, `main.js` or `config.js` so the hash changes and browsers fetch the new file.
 
 ## Photos
 The hero photos in `assets/img/` (home, technology) are AI-generated with Google Flow (Nano Banana) for LAM. Each has a full-size and an `-800` version for phones.
