@@ -13,7 +13,6 @@ window.LAM_CONFIG = {
   links: {
     masterbot: "https://masterbot.lam.my",
     masterads: "https://ads.lam.my",
-    blaster: "https://blaster.lam.my",
-    medisavers: "https://www.medisavers.my/"
+    blaster: "https://blaster.lam.my"
   }
 };
