@@ -32,16 +32,29 @@
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".nav");
   if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
+    var setOpen = function (open) {
+      nav.classList.toggle("open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      document.body.classList.toggle("menu-open", open);
+    };
+    toggle.addEventListener("click", function () { setOpen(!nav.classList.contains("open")); });
     nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
+      a.addEventListener("click", function () { setOpen(false); });
     });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+    document.addEventListener("click", function (e) {
+      if (nav.classList.contains("open") && !nav.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+    });
+  }
+
+  // Phones: hide the sticky WhatsApp bar while the page's own first buttons are on screen
+  var bar = document.querySelector(".mobile-cta");
+  var heroBtns = document.querySelector("main .btn-row");
+  if (bar && heroBtns && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      document.body.classList.toggle("hero-cta-visible", entries[0].isIntersecting);
+    }).observe(heroBtns);
   }
 
   // Lead form: opens a pre-filled WhatsApp message (MasterBot can pick it up)
