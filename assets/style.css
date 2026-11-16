@@ -184,13 +184,6 @@ p { margin: 0 0 1em; }
 .footer a { color: var(--ink-soft); text-decoration: none; }
 .footer a:hover { color: var(--brand); }
 
-/* Floating WhatsApp */
-.wa-float {
-  position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 58px; height: 58px; border-radius: 50%;
-  background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(31,168,85,.4);
-}
-.wa-float svg { width: 30px; height: 30px; fill: #fff; }
-
 /* Hero photos */
 .hero-grid { display: grid; gap: 28px; align-items: center; }
 .hero-img { width: 100%; height: auto; aspect-ratio: 1376 / 768; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
@@ -245,18 +238,9 @@ figure.shot figcaption { font-size: .9rem; color: var(--ink-soft); text-align: c
 .footer ul { gap: 0; }
 .footer ul a { display: inline-block; padding: 8px 0; }
 
-/* Sticky action bar on phones */
-.mobile-cta { display: none; }
+/* Phones: room for the chat bubble below the footer */
 @media (max-width: 719px) {
-  .wa-float { display: none; }
-  .mobile-cta {
-    display: grid; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
-    padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96);
-    backdrop-filter: blur(8px); border-top: 1px solid var(--line); box-shadow: 0 -6px 20px rgba(20,33,61,.08);
-  }
-  .mobile-cta .btn { padding: 12px 18px; }
-  body.menu-open .mobile-cta { display: none; }
-  .footer { padding-bottom: 110px; }
+  .footer { padding-bottom: 96px; }
 
   /* Tighter rhythm */
   .section { padding: 40px 0; }
@@ -304,8 +288,6 @@ figure.shot figcaption { font-size: .9rem; color: var(--ink-soft); text-align: c
 }
 @media (max-width: 719px) {
   .card > .tag { justify-self: start; }
-  .mobile-cta { transition: transform .25s ease; }
-  body.hero-cta-visible .mobile-cta { transform: translateY(110%); }
 }
 
 /* ---------- Motion ---------- */
@@ -369,11 +351,6 @@ figure.shot figcaption { font-size: .9rem; color: var(--ink-soft); text-align: c
 .stats .stat strong { font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .stats .stat span { display: block; color: var(--ink-soft); font-size: .92rem; font-weight: 600; }
 
-/* WhatsApp float pulse */
-.wa-float::before {
-  content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--wa); z-index: -1;
-}
-
 /* Everything below runs only when JS is on and motion is allowed */
 @media (prefers-reduced-motion: no-preference) {
   .motion .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
@@ -399,7 +376,6 @@ figure.shot figcaption { font-size: .9rem; color: var(--ink-soft); text-align: c
   .hero::before { animation: drift 14s ease-in-out infinite alternate; }
   .hero::after { animation: drift 18s ease-in-out infinite alternate-reverse; }
   .page-hero::before { animation: drift 16s ease-in-out infinite alternate; }
-  .wa-float::before { animation: pulse 2.4s ease-out infinite; }
   .tag-live { position: relative; padding-left: 22px; }
   .tag-live::before {
     content: ""; position: absolute; left: 9px; top: 50%; width: 7px; height: 7px; margin-top: -3.5px;
@@ -415,11 +391,38 @@ figure.shot figcaption { font-size: .9rem; color: var(--ink-soft); text-align: c
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes shimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 @keyframes drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(60px, 40px) scale(1.15); } }
-@keyframes pulse { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.7); opacity: 0; } }
 @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.75); } }
 @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+}
+
+/* ---------- LAM Bot chat bubble (Typebot): floating, 3D look ---------- */
+typebot-bubble::part(button) {
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 32% 26%, #6ef0a0 0%, #25d366 42%, #149a48 100%) !important;
+  box-shadow:
+    inset 0 3px 6px rgba(255,255,255,.45),
+    inset 0 -6px 12px rgba(0,0,0,.22),
+    0 6px 0 #0f7a39,
+    0 14px 28px rgba(20,120,60,.45);
+  transition: scale .25s ease, rotate .25s ease, box-shadow .25s ease;
+}
+typebot-bubble::part(button):hover {
+  scale: 1.08; rotate: -8deg;
+  box-shadow:
+    inset 0 3px 6px rgba(255,255,255,.5),
+    inset 0 -6px 12px rgba(0,0,0,.22),
+    0 8px 0 #0f7a39,
+    0 22px 36px rgba(20,120,60,.5);
+}
+typebot-bubble::part(button):active { scale: .96; }
+@media (prefers-reduced-motion: no-preference) {
+  typebot-bubble::part(button) { animation: bot-float 3.2s ease-in-out infinite; }
+}
+@keyframes bot-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
 }
