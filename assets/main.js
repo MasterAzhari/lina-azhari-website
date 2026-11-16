@@ -48,15 +48,6 @@
     });
   }
 
-  // Phones: hide the sticky WhatsApp bar while the page's own first buttons are on screen
-  var bar = document.querySelector(".mobile-cta");
-  var heroBtns = document.querySelector("main .btn-row");
-  if (bar && heroBtns && "IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      document.body.classList.toggle("hero-cta-visible", entries[0].isIntersecting);
-    }).observe(heroBtns);
-  }
-
   // Lead form: opens a pre-filled WhatsApp message (MasterBot can pick it up)
   var form = document.getElementById("lead-form");
   if (form) {
