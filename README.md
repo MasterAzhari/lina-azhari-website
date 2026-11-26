@@ -1,6 +1,6 @@
 # Lina Azhari Marketing (LAM) website
 
-Marketing site for Lina Azhari Marketing, a Malaysian IT company founded in 2018 that runs digital marketing for clients. Its speciality is an Ads Rotation System for marketing teams, and it builds its own products: MasterBot, MasterAds, MasterBlaster, Pibot (intelligent chatbot) and Grak Master Studio (AI video studio, links out to https://grakmasterstudio.my).
+Marketing site for Lina Azhari Marketing, a Malaysian IT company founded in 2018 that runs digital marketing for clients. Its speciality is an Ads Rotation System for marketing teams, and it builds its own products: MasterBot, MasterAds, MasterBlaster, Pibot (intelligent chatbot) and Master AI Studio (AI video studio, links out to https://masteraistudio.my/).
 
 Plain static site (HTML, CSS, JS), no build step, English, mobile-first.
 
@@ -9,7 +9,7 @@ Plain static site (HTML, CSS, JS), no build step, English, mobile-first.
 |---|---|
 | `index.html` | Home: hero, what we do (digital marketing + Ads Rotation System), products, about LAM, call to action |
 | `services.html` | Digital marketing services, Ads Rotation System, apps and websites |
-| `products.html` | MasterBot, MasterAds, MasterBlaster, Pibot and Grak Master Studio |
+| `products.html` | MasterBot, MasterAds, MasterBlaster, Pibot and Master AI Studio |
 | `masterbot.html` | MasterBot AI WhatsApp bot: features, real panel screenshots, FAQ, free demo |
 | `pibot.html` | Pibot chatbot builder: builder and live chat screenshots, free demo |
 | `contact.html` | Enquiry form that opens a pre-filled WhatsApp message, WhatsApp, email, office address with Google Maps link |
