@@ -426,3 +426,26 @@ typebot-bubble::part(button):active { scale: .96; }
   0%, 100% { translate: 0 0; }
   50% { translate: 0 -8px; }
 }
+
+/* ---------- Our work (client projects) ---------- */
+.work-card { padding: 0; overflow: hidden; }
+.work-card > :not(.work-img) { margin-left: 24px; margin-right: 24px; }
+.work-card .tag { margin-top: 20px; }
+.work-card .more { margin-bottom: 24px; }
+.work-img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--bg-soft); border-bottom: 1px solid var(--line); }
+@media (prefers-reduced-motion: no-preference) {
+  .work-img { transition: transform .5s ease; }
+  .work-card:hover .work-img { transform: scale(1.04); }
+}
+
+/* ---------- AI video ads ---------- */
+.video-points { list-style: none; padding: 0; margin: 20px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; color: var(--ink-soft); }
+.video-points li::before { content: "✓ "; color: var(--brand); font-weight: 800; }
+.video-card { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.video-card figcaption { padding: 12px 16px 16px; font-weight: 600; font-size: .95rem; }
+.yt { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; background: #000; cursor: pointer; }
+.yt img { width: 100%; height: 100%; object-fit: cover; opacity: .9; transition: opacity .2s; }
+.yt:hover img, .yt:focus-visible img { opacity: 1; }
+.yt-play { position: absolute; left: 50%; top: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px; border-radius: 14px; background: #e62117; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.yt-play::after { content: ""; position: absolute; left: 27px; top: 14px; border-style: solid; border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #fff; }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
