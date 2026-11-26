@@ -148,6 +148,22 @@
     targets.forEach(function (el) { ro.observe(el); });
   }
 
+  // YouTube videos: load the player only when the visitor taps play
+  document.querySelectorAll("[data-yt]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + btn.getAttribute("data-yt") + "?autoplay=1&rel=0";
+      f.title = btn.getAttribute("aria-label") || "YouTube video";
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      f.allowFullscreen = true;
+      var box = document.createElement("div");
+      box.className = "yt";
+      box.appendChild(f);
+      btn.replaceWith(box);
+      f.focus();
+    }, { once: true });
+  });
+
   // Footer year
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
